@@ -40,7 +40,14 @@ app.get('/getfacts', (request, response) => {
 app.post('/facts', (req, res) => {
   firebaseHelper.firestore
       .creatNewDocument(db, 'facts', req.body);
-  res.send();
-})
+  res.send('created successfully');
+});
+
+app.get('/facts', (req, res) => {
+  firebaseHelper.firestore
+    .backup(db, 'facts')
+    .then(data => res.status(200).json(data))
+    .catch(error => console.log(error));
+});
 
 exports.app = functions.https.onRequest(app);

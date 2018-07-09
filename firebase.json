@@ -4,7 +4,7 @@
       "npm --prefix \"%RESOURCE_DIR%\" run lint"
     ],
     "rewrites": [{
-      "source": "/timestamp",
+      "source": "/api/v1/**",
       "function": "app"
     }]
   }
