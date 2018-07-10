@@ -5,7 +5,7 @@
     ],
     "rewrites": [{
       "source": "/api/v1/**",
-      "function": "app"
+      "function": "api"
     }]
   }
 }
